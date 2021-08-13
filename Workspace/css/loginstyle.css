@@ -1,0 +1,39 @@
+
+body {background-color: rgba(248,249,250,255);}
+
+img {display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    width: auto;
+}
+
+h1 {
+    font-family: Raleway;
+    text-align: center;
+    color: rgb(75,76,76);
+    background-color:rgba(120,213,148,255);
+    font-size: 50pt;
+    border-radius: 5pt;
+}
+
+form {
+    background-color: rgb(242,235,115);
+    text-align: center;
+    padding: 10pt;
+    border-radius: 5px;
+    height: 100pt;
+    width: 300pt;
+}
+
+input[type=submit] {
+    background-color: rgba(121,216,233,255);
+    border: none;
+    color: rgb(75,76,76);
+    font-size: 18px;
+    font-family: Raleway;
+    font-weight: bold;
+    padding: 10px 10px;
+    margin: 5pt;
+    border-radius: 5px;
+}
