@@ -1,11 +1,12 @@
 
-body {background-color: rgba(248,249,250,255);}
+body {background-color: rgba(248,249,250,255);
+}
 
 img {display: block;
     margin-left: auto;
     margin-right: auto;
     height: auto;
-    width: auto;
+    width: 400pt;
 }
 
 h1 {
@@ -15,6 +16,7 @@ h1 {
     background-color:rgba(120,213,148,255);
     font-size: 50pt;
     border-radius: 5pt;
+    padding-bottom: 5pt;
 }
 
 form {
@@ -24,6 +26,9 @@ form {
     border-radius: 5px;
     height: 100pt;
     width: 300pt;
+    position: absolute;
+    left: 465px;
+    top: 350px;
 }
 
 input[type=submit] {
