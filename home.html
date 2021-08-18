@@ -12,6 +12,9 @@
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="788007872030-hi519unr61blvot0cmolav00a4pv2l04.apps.googleusercontent.com">
   </head>
   <body>
     <nav class="site-header sticky-top py-1 bg-dark">
@@ -101,7 +104,21 @@
         <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
         <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
       </div>
+
+      <div> <input type="button" value="Sign out" onclick="signOut()"> </div>
     </footer>
+    
+
+    <script>
+      function signOut() {
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function () {
+          console.log('User signed out.');
+        });
+      location.assign("index.html");
+      }
+    </script>
+
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/init.js"></script>
