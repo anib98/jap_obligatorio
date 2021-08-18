@@ -42,3 +42,9 @@ input[type=submit] {
     margin: 5pt;
     border-radius: 5px;
 }
+
+div{
+    position: absolute;
+    left: 465px;
+    top: 350px;
+}
