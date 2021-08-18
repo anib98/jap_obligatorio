@@ -101,7 +101,20 @@
         <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
         <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
       </div>
+
+      <div> <input type="button" value="Sign out" onclick="signOut()"> </div>
     </footer>
+    
+
+    <script>
+      function signOut() {
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function () {
+          console.log('User signed out.');
+        });
+      }
+    </script>
+
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/init.js"></script>
