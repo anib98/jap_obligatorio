@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
+
 <html lang="en">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -9,37 +9,51 @@
 
 		<link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/"/>
 		<link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet"/>
-		<!-- Bootstrap core CSS -->
-		<link rel="stylesheet" href="./css/loginstyle.css" />
 		
-		<script src="https://apis.google.com/js/platform.js" async defer></script>
+		<link rel="stylesheet" href="./css/loginstyle.css"/>
+		<link rel="stylesheet" href="./css/styles.css"/>
+		
+		<script src="https://apis.google.com/js/platform.js" async defer> </script>
     	<meta name="google-signin-client_id" content="788007872030-hi519unr61blvot0cmolav00a4pv2l04.apps.googleusercontent.com">
 	</head>
 
 	<body class="text-center">
 			<img src="./login.png"/>
 			<h1>Sign in</h1> <br/>
+			<!-- Login form, con campos obligatiorios que se highlightean al tocarlos, 
+			con una action page asociada al Submit que te redirige a la Home Page -->
 			<form class="form-signin" action="./home.html">
 		  		<input name="user" type="text" placeholder="Username" size="25pt" required autofocus> <br/><br/>
 		  		<input name="pwd" type="password" placeholder="Password" size="25pt" required autofocus> <br/><br/>
 				<input type="submit" value="Submit"/>
+				<div class="g-signin2" data-onsuccess="onSignIn"></div> </br>
 			</form>
-			<div class="g-signin2" data-onsuccess="onSignIn"></div>
-			
-			<script>
-			function onSignIn(googleUser) {
-				// Useful data for your client-side scripts:
-				var profile = googleUser.getBasicProfile();
-				localStorage.setItem(
-				  "User", JSON.stringify({
-					email: profile.getName(),
-					avatar: profile.getImageUrl()
-				  }));
-			//	window.location = "home.html";
-			  }
-			</script>
+		
+		<!-- Desafíate, Google tiene los permisos asociados a mi Github, así que es posible que no
+		visualizen el botón si lo abren desde sus computadoras. 
+		Pueden intentar desde https://anib98.github.io/jap_obligatorio/-->
+		<script>
+		function onSignIn(googleUser) {
+			var profile = googleUser.getBasicProfile();
+			localStorage.setItem(
+			  "User", JSON.stringify({
+				email: profile.getName(),
+				avatar: profile.getImageUrl()
+			  }));
+			window.location = "home.html";
+		  }
+		</script>
 
-		<script src="./init.js"></script>
+		<footer class="text-muted bg-light">
+			<div class="container">
+			  <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+			  <p>Clickea <a target="_blank" href="./Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+			</div>
+		  </footer>
+
+		  <script src="./init.js"></script>
 		<script src="./login/login.js"></script>
+
 	</body>
 </html>
+

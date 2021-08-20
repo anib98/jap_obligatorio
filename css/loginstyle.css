@@ -43,8 +43,9 @@ input[type=submit] {
     border-radius: 5px;
 }
 
-div{
+.container {
+    text-align: justify;
     position: absolute;
-    left: 465px;
-    top: 350px;
+    left: 480px;
+    top: 520px;
 }
