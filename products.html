@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
+
 <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -17,6 +17,7 @@
     
   </head>
   <body>
+    <!-- El header del sitio, cambié la redirección de Inicio para que me lleve a Home y no a Index (Login) -->
     <nav class="site-header sticky-top py-1 bg-dark">
       <div class="container d-flex flex-column flex-md-row justify-content-between">
         <a class="py-2 d-none d-md-inline-block" href="./home.html">Inicio</a>
@@ -32,6 +33,7 @@
           <h2>Productos</h2>
           <p class="lead">Verás aquí todas los productos del sitio.</p>
       </div>
+      <!-- Aquí están los botones de los filtros aplicables a la lista de productos -->
       <div class="container">
           <div class="row">
               <div class="col text-right">
@@ -55,6 +57,9 @@
                   <div class="col">
                     <p class="font-weight-normal text-right my-2">Cant.</p>
                   </div>
+
+                  <!-- Aquí se puede seleccionar un rango de numeros para 
+                  filtrar por cantidad de artículos vendidos del producto -->
                   <div class="col">
                     <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
                   </div>
@@ -72,12 +77,13 @@
           </div>
           <div class="row">
               <div class="list-group" id="prod-list-container">
-
+                <!-- Aquí se hace el append de la lista de productos desde el JS (products.js) -->
               </div>
           </div>
       </div>
   </main>
   
+  <!-- Footer que se encuentra en toda la página -->
   <footer class="text-muted bg-light">
     <div class="container">
       <p class="float-right">
