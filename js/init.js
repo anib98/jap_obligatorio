@@ -46,3 +46,7 @@ var getJSONData = function(url){
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
 });
+
+//localStorage.setItem("clave", "valor")
+//localStorage.getItem("clave")
+//tene cuidado el contexto en el que los invocan, pongan en el sumit que tenga un closure
