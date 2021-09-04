@@ -23,9 +23,11 @@
 			<!-- Login form, con campos obligatiorios que se highlightean al tocarlos, 
 			con una action page asociada al Submit que te redirige a la Home Page -->
 			<form class="form-signin" action="./home.html">
-		  		<input name="user" type="text" placeholder="Username" size="25pt" required autofocus> <br/><br/>
-		  		<input name="pwd" type="password" placeholder="Password" size="25pt" required autofocus> <br/><br/>
-				<input type="submit" value="Submit"/>
+		  		<input id="user" type="text" placeholder="Username" size="25pt" required autofocus> <br/><br/>
+		  		<input id="pwd" type="password" placeholder="Password" size="25pt" required autofocus> <br/><br/>
+				<!-- Botón de inicio de sesión tiene un onclick que inicializa la función saveLocalStorage()
+				definida en el login.js -->
+				<input type="submit" value="Submit" onclick="saveLocalStorage()">
 				<div class="g-signin2" data-onsuccess="onSignIn"></div> </br>
 			</form>
 		
@@ -51,8 +53,8 @@
 			</div>
 		  </footer>
 
-		  <script src="./init.js"></script>
-		<script src="./login/login.js"></script>
+		<script src="./init.js"></script>
+		<script src="./js/login.js"></script>
 
 	</body>
 </html>
