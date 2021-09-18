@@ -1,3 +1,5 @@
+* {font-family: 'Raleway', serif}
+
 .jumbotron, .card-body, .container, .site-header{
     font-family: 'Raleway', serif !important;
 }
@@ -138,4 +140,28 @@ a.custom-card:hover {
 
 .checked {
   color: orange;
+}
+
+.fas fa-star{
+  color: rgb(14, 3, 65);
+}
+
+.far fa-star{
+  color: rgb(14, 3, 65);
+}
+
+input[type = "radio"]{ display:none;}
+
+.puntuacion label:hover,
+.puntuacion label:hover ~ label,
+.puntuacion input:checked ~ label {
+color:orange;
+}
+
+#newScore {
+  display: none;
+}
+
+#currentDayTime{
+  display: none;
 }
