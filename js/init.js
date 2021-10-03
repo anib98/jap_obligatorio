@@ -13,6 +13,7 @@ const PRODUCT_INFO_COMMENTS_URL =
 const CART_INFO_URL = "https://japdevdep.github.io/ecommerce-api/cart/987.json";
 const CART_BUY_URL = "https://japdevdep.github.io/ecommerce-api/cart/buy.json";
 
+
 var showSpinner = function () {
 	document.getElementById("spinner-wrapper").style.display = "block";
 };
@@ -54,5 +55,3 @@ document.addEventListener("DOMContentLoaded", function (e) {});
 //localStorage.setItem("clave", "valor")
 //localStorage.getItem("clave")
 //tene cuidado el contexto en el que los invocan, pongan en el sumit que tenga un closure
-
-document.getElementById("user").innerHTML = localStorage.getItem("user");

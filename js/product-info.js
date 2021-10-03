@@ -9,18 +9,19 @@ function showImagesGallery(array) {
 
 	for (let i = 0; i < array.length; i++) {
 		let imageSrc = array[i];
-
-		htmlContentToAppend +=
-			`
-        <div class="col-lg-3 col-md-4 col-6">
-            <div class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="` +
-			imageSrc +
-			`" alt="">
-            </div>
-        </div>
-        `;
-
+		 
+		if (i == 0) {
+		htmlContentToAppend += `
+				<div class="carousel-item active">
+                	<img class="d-block w-100" src="${imageSrc}">
+				</div> `;
+		}
+		else {
+		htmlContentToAppend += `
+				<div class="carousel-item">
+                	<img class="d-block w-100" src="${imageSrc}">
+				</div> `;
+		}
 		document.getElementById("productImagesGallery").innerHTML = htmlContentToAppend;
 	}
 }
@@ -30,7 +31,7 @@ function productRel(array) {
 	let htmlContentToAppend = "";
 
 	for (let dato of array) {
-		//product está definido ...
+		//product está definido en el getJSONData(PRODUCTS_URL)
 		let relatedProductsIndex = product[dato];
 
 		// `lo que esté acá adentro es un literal template ` y eso puede contener placeholders (${expression})
@@ -86,7 +87,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
 			}
 			//Aquí corro la función productRel (definida anteriormente, linea 27)
 			// y le paso los parámetros obtenidos con el JSON
-			//productInfo (definido anteriormente, linea 86) y relatedProducts
 			productRel(productInfo.relatedProducts);
 		});
 	});

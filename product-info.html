@@ -13,20 +13,12 @@
 		<link href="css/font-awesome.min.css" rel="stylesheet" />
 		<link href="css/bootstrap.min.css" rel="stylesheet" />
 		<link href="css/styles.css" rel="stylesheet" />
+		<script src="./js/template header.js" type="text/javascript" defer></script>\
+		
 	</head>
 
 	<body>
-		<nav class="site-header sticky-top py-1 bg-dark">
-			<div class="container d-flex flex-column flex-md-row justify-content-between">
-				<a class="py-2 d-none d-md-inline-block" href="./home.html">Inicio</a>
-				<a class="py-2 d-none d-md-inline-block" href="./categories.html">Categorías</a>
-				<a class="py-2 d-none d-md-inline-block" href="./products.html">Productos</a>
-				<a class="py-2 d-none d-md-inline-block" href="./sell.html">Vender</a>
-				<a class="py-2 d-none d-md-inline-block" href="./cart.html">Mi carrito</a>
-				<a class="py-2 d-none d-md-inline-block" href="./my-profile.html" id="profile"></a>
-				<a class="py-2 d-none d-md-inline-block" href="./index.html" onclick="logOut()">Salir</a>
-			</div>
-		</nav>
+		<header-component></header-component>
 		<main role="main">
 			<div class="container mt-5">
 				<div class="text-center p-4">
@@ -66,8 +58,20 @@
 
 					<dt>Imágenes ilustrativas</dt>
 					<dd>
-						<!-- aquí se hace el Append de las imágenes (function showImagesGallery) -->
-						<div class="row text-center text-lg-left pt-2" id="productImagesGallery"></div>
+						<div class="carousel slide" data-ride="carousel" id="carouselControls" style="width: 55%;">
+							<div class="carousel-inner" id="productImagesGallery">
+								<!-- aquí se hace el Append de las imágenes (function showImagesGallery) -->
+							</div>
+							
+							<a class="carousel-control-prev" href="#carouselControls" role="button" data-slide="prev">
+								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+								<span class="sr-only">Previous</span>
+							  </a>
+							  <a class="carousel-control-next" href="#carouselControls" role="button" data-slide="next">
+								<span class="carousel-control-next-icon" aria-hidden="true"></span>
+								<span class="sr-only">Next</span>
+							</a>
+						</div>
 					</dd>
 
 					<dt>Productos relacionados</dt>
@@ -85,7 +89,7 @@
 					<!-- En esta sección el usuario tiene la posibilidad de crear un nuevo comentario -->
 					<dt>Cuéntanos qué te parecio este producto</dt>
 					<dd>
-						<form id="insertComment">
+						<form id="insertComment"
 							<!-- Aquí selecciona la puntuación mediante estrellas
 							cuando clickea en una se guarda el numero al que equivale (entre 1 y 5) en un div-->
 							<div class="puntuacion">
@@ -144,5 +148,6 @@
 		<script src="js/init.js"></script>
 		<script src="js/product-info.js"></script>
 		<script src="./js/login.js"></script>
+		
 	</body>
 </html>
