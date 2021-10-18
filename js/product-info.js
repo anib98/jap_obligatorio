@@ -94,7 +94,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
 //Esta función recibe y recorre un array y agrega en el HTML (en el ID comments)
 //user, score, descripción, día y hora
 function showComments(comments) {
-	
 	let htmlContentToAppend = "";
 	
 	for (let item of comments) {

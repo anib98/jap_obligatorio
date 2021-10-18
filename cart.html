@@ -1,67 +1,240 @@
 <!DOCTYPE html>
-<!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
 <html lang="en">
+	<head>
+		<script src="./js/CheckLogin.js"></script>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-<head>
-  <script src="./js/CheckLogin.js"></script>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport"	content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+		<meta name="description" content="" />
+		<title>eMercado - Todo lo que busques está aquí</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <title>eMercado - Todo lo que busques está aquí</title>
+		<link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/"/>
+		<link	href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet"/>
+    
+		<style>
+			.bd-placeholder-img {
+				font-size: 1.125rem;
+				text-anchor: middle;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}
 
-  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
-  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+			@media (min-width: 768px) {
+				.bd-placeholder-img-lg {
+					font-size: 3.5rem;
+				}
+			}
+		</style>
+		<link href="css/bootstrap.min.css" rel="stylesheet"/>
+		<link href="css/styles.css" rel="stylesheet"/>
+		<link href="css/dropzone.css" rel="stylesheet"/>
+    <link href="./css/cart.css" rel="stylesheet"/>
+    <link href="./css/modal.css" rel="stylesheet"/>
 
-  <style>
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
+		<script src="./js/template header.js" type="text/javascript" defer></script>
+	</head>
 
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-      }
-    }
-  </style>
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/styles.css" rel="stylesheet">
-  <link href="css/dropzone.css" rel="stylesheet">
+	<body>
+		<header-component></header-component>
 
-  <script src="./js/template header.js" type="text/javascript" defer></script>
+    <main role="main">
+      <div class="container mt-5">
+          <div class="text-center p-4">
+              <h2>Mi Carrito</h2>
+              <p class="lead">
+                  Encontrarás aquí toda la información de tu futuro pedido.
+              </p>
+          </div>
 
-</head>
+  <div class="card">
+      <div class="row">
+          <div class="col-md-8 cart">
+              <div class="title">
+                  <div class="row">
+                      <div class="col align-self-center text-right text-muted">2 items</div>
+                  </div>
+              </div>
+                <div id="cart"> </div> </br>
+              <div class="back-to-shop"><a href="./categories.html">&leftarrow; Back to shop </a><span class="text-muted"></span></div>
+          </div>
+          <div class="col-md-4 summary">
+              <div>
+                  <h5><b>Summary</b></h5>
+              </div>
+              <hr>
+              <div class="row">
+                  <div class="col" style="padding-left:0;">Subtotal</div>
+                  <div class="col text-right" id="subtotal"> </div>
+              </div>
+              
+              <br><div class="row">
+                <div class="col" style="padding-left:0;">Select shipping</div>
+                <div class="col text-right" id="shippingPrice"> </div>
+              </div>
+              <br><form style="padding-left:0;">
+                <select required id="shipping" onchange="onUpdateShippingMethod()">
+                  <option class="text-muted" value="premium">Premium (2-5 días)</option>
+                  <option class="text-muted" value="express">Express (5-8 días)</option>
+                  <option class="text-muted" value="standard">Standard (12 a 15 días)</option>
+                </select>
+              </form>
 
-<body>
-  <header-component></header-component>
+              <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+                  <div class="col">TOTAL</div>
+                  <div class="col text-right" id="total"></div>
+              </div>
+              <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">PAGAR</button>
+            </div>
+          </div>
+      </div>
+    </div>
+  </main>
 
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 17/10/2021) y Entrega 7 (Fecha de entrega: 14/11/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  
+
+		<footer class="text-muted bg-light">
+			<div class="container">
+				<p class="float-right">
+					<a href="#">Volver arriba</a>
+				</p>
+				<p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+				<p>
+					Clickea <a target="_blank" href="./Letra.pdf">aquí</a> para descargar
+					la letra del obligatorio.
+				</p>
+			</div>
+		</footer>
+
+    <!-- Pagar -->
+  <!--https://getbootstrap.com/docs/4.0/components/modal/-->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Método de Pago</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!--https://bbbootstrap.com/snippets/payment-form-three-different-payment-options-13285516-->
+          <div class="container py-5">
+            <!-- For demo purpose -->
+            <div class="row mb-6">
+            </div> <!-- End -->
+            <div class="row">
+                <div class="col-lg-12 mx-auto">
+                    <div class="card ">
+                        <div class="card-header">
+                            <div class="bg-white shadow-sm pt-4 pl-2 pr-2 pb-2">
+                                <!-- Credit card form tabs -->
+                                <ul role="tablist" class="nav bg-light nav-pills rounded nav-fill mb-3">
+                                    <li class="nav-item"> <a data-toggle="pill" href="#credit-card" class="nav-link active "> <i class="fas fa-credit-card mr-2"></i> Tarjeta de Crédito </a> </li>
+                                    <li class="nav-item"> <a data-toggle="pill" href="#net-banking" class="nav-link "> <i class="fas fa-mobile-alt mr-2"></i> Transferencia Bancaria </a> </li>
+                                </ul>
+                            </div> <!-- End -->
+                            <!-- Credit card form content -->
+                            <div class="tab-content">
+                                <!-- credit card info-->
+                                <div id="credit-card" class="tab-pane fade show active pt-3">
+                                    <form role="form" onsubmit="event.preventDefault()">
+                                        <div class="form-group"> <label for="username">
+                                                <h6>Nombre en la tarjeta</h6>
+                                            </label> <input type="text" name="username" placeholder="Card Owner Name" required class="form-control "> </div>
+                                        <div class="form-group"> <label for="cardNumber">
+                                                <h6>Número de tarjeta</h6>
+                                            </label>
+                                            <div class="input-group"> <input type="text" name="cardNumber" placeholder="Valid card number" class="form-control " required>
+                                                <div class="input-group-append"> <span class="input-group-text text-muted"> <i class="fab fa-cc-visa mx-1"></i> <i class="fab fa-cc-mastercard mx-1"></i> <i class="fab fa-cc-amex mx-1"></i> </span> </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-8">
+                                                <div class="form-group"> <label><span class="hidden-xs">
+                                                            <h6>Fecha de vencimiento</h6>
+                                                        </span></label>
+                                                    <div class="input-group"> <input type="number" placeholder="MM" name="" class="form-control" required> <input type="number" placeholder="YY" name="" class="form-control" required> </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="form-group mb-4"> <label data-toggle="tooltip" title="Three digit CV code on the back of your card">
+                                                        <h6>CVV <i class="fa fa-question-circle d-inline"></i></h6>
+                                                    </label> <input type="text" required class="form-control"> </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer"> <button type="button" data-toggle="modal" data-target="#exampleModal2" class="subscribe btn btn-primary btn-block shadow-sm"> Confirmar Pago </button>
+                                    </form>
+                                </div>
+                            </div> <!-- End -->
+                            <!-- bank transfer info -->
+                            <div id="net-banking" class="tab-pane fade pt-3">
+                                <div class="form-group "> <label for="Select Your Bank">
+                                        <h6>Selecciona tu banco</h6>
+                                    </label> <select class="form-control" id="ccmonth">
+                                        <option value="" selected disabled>--Selecciona tu banco--</option>
+                                        <option>Itaú</option>
+                                        <option>Santander</option>
+                                        <option>BROU</option>
+                                        <option>Scotiabank</option>
+                                        <option>Bandes</option>
+                                        <option>BBVA</option>
+                                        <option>HSBC Bank</option>
+                                        <option>Banque Heritage</option>
+                                        <option>FUCEREP</option>
+                                    </select> </div>
+                                <div class="form-group">
+                                    <p> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2"><i class="fas fa-mobile-alt mr-2"></i> Proceder al Pago </button> </p>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
     </div>
   </div>
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </div>
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/dropzone.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/cart.js"></script>
-  <script src="./js/login.js"></script>
-</body>
 
+    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Pago Finalizado</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="pagoCompletado"></div>
+          </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div> 
+ 
+
+
+    <div id="spinner-wrapper">
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+		<script src="js/jquery-3.4.1.min.js"></script>
+		<script src="js/bootstrap.bundle.min.js"></script>
+		<script src="js/dropzone.js"></script>
+		<script src="js/init.js"></script>
+		<script src="js/cart.js"></script>
+		<script src="./js/login.js"></script>
+	</body>
 </html>
+
