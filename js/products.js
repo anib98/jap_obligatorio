@@ -58,50 +58,31 @@ function showProductList() {
 		//pero si se agregó valor en la parte de min o max count, toma eso como valor y lo compara al cost
 		//Si el cost entra en el rango entonces entre en el if
 		//Más abajo se define el minCount y maxCount
-		if (
-			(minCount == undefined ||
-				(minCount != undefined && parseInt(product.cost) >= minCount)) &&
-			(maxCount == undefined ||
-				(maxCount != undefined && parseInt(product.cost) <= maxCount))
-		) {
+		if ( (minCount == undefined || (minCount != undefined && parseInt(product.cost) >= minCount)) &&
+			(maxCount == undefined || (maxCount != undefined && parseInt(product.cost) <= maxCount)) ) 
+			{
 			//Crea el contenido para el append del HTML
 			//Selecciona Imagen, Descripción, nombre del producto, precio y moneda, cantidad de vendidos
-			htmlContentToAppend +=
-				`
-            <a href="product-info.html" class="list-group-item list-group-item-action">
-                <div class="row">
-                    <div class="col-3">
-                        <img src="` +
-				product.imgSrc +
-				`" alt="` +
-				product.description +
-				`" class="img-thumbnail">
+			htmlContentToAppend += `
+			<div class="col-md-4">
+            	<a href="product-info.html" class="row">
+                    <div class="row">
+                        <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
                     </div>
-                    <div class="col">
+                    <div class="row">
                         <div class="d-flex w-100 justify-content-between">
-                            <h4 class="mb-1">` +
-				product.name +
-				`</h4>
-                            <small class="text-muted">` +
-				product.cost +
-				` ` +
-				product.currency +
-				`</small>
+                            <h4 class="mb-1">` + product.name + `</h4>
+                            <small class="text-muted">` + product.cost + ` ` + product.currency + `</small>
                         </div>
-                        <p class="mb-1">` +
-				product.description +
-				`</p> </br>
-                        <p class="mb-1">` +
-				product.soldCount +
-				` artículos vendidos</p>
+                        <p class="mb-1">` + product.description + `</p> <br>
+                        <p class="mb-1">` + product.soldCount + ` artículos vendidos</p>
                     </div>
-                </div>
-            </a>
+                </a>
+			</div>
             `;
 		}
 
-		document.getElementById("prod-list-container").innerHTML =
-			htmlContentToAppend;
+		document.getElementById("prod-list-container").innerHTML = htmlContentToAppend;
 	}
 }
 
@@ -220,35 +201,22 @@ document.addEventListener("DOMContentLoaded", function (e) {
 		const htmlString = products
 			.map((product) => {
 				return (
-					`<a href="product-info.html" class="list-group-item list-group-item-action">
-                <div class="row">
-                    <div class="col-3">
-                        <img src="` +
-					product.imgSrc +
-					`" alt="` +
-					product.description +
-					`" class="img-thumbnail">
+				`
+				<div class="col-md-4">
+				<a href="product-info.html" class="list-group-item list-group-item-action">
+                    <div class="row">
+                        <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
                     </div>
-                    <div class="col">
+                    <div class="row">
                         <div class="d-flex w-100 justify-content-between">
-                            <h4 class="mb-1">` +
-					product.name +
-					`</h4>
-                            <small class="text-muted">` +
-					product.cost +
-					` ` +
-					product.currency +
-					`</small>
+                            <h4 class="mb-1">` + product.name + `</h4>
+                            <small class="text-muted">` + product.cost + ` ` + product.currency + `</small>
                         </div>
-                        <p class="mb-1">` +
-					product.description +
-					`</p> </br>
-                        <p class="mb-1">` +
-					product.soldCount +
-					` artículos vendidos</p>
+                        <p class="mb-1">` + product.description + `</p> <br>
+                        <p class="mb-1">` + product.soldCount + ` artículos vendidos</p>
                     </div>
-                </div>
-            </a>
+            	</a>
+				</div>
             `
 				);
 			})

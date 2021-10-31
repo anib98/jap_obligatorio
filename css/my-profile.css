@@ -1,0 +1,41 @@
+*{
+    font-family: 'Raleway', serif
+}
+body {
+    background: #2596be
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #78d594
+}
+
+.profile-button {
+    background: #2596be;
+    box-shadow: none;
+    border: none
+}
+
+.profile-button:hover {
+    background: #2596be
+}
+
+.profile-button:focus {
+    background: #2596be;
+    box-shadow: none
+}
+
+.profile-button:active {
+    background: #2596be;
+    box-shadow: none
+}
+
+.back:hover {
+    color: #2596be;
+    cursor: pointer
+}
+
+.labels {
+    font-size: 11px
+}
+

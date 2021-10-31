@@ -1,10 +1,11 @@
 const _DOLAR_TO_PESOS = 40;
 let cartInfo = { articles: [] };
 
-//Business
-//Calcula el precio unitario en una sola moneda (transforma UYU a usd) 
+//Acá defino todas las funciones que se encargan de hacer calculos
+
+//Calcula el precio unitario en una sola moneda (transforma UYU a USD)
+//necesita el producto y en qué moneda está 
 //y devuelve el precio del producto en base a la cantidad seleccionada
-//necesita el producto y en qué moneda está
 function getProductPrice(cartProduct, selectedCurrency) {
     let costoUnitario = cartProduct.unitCost;
     if (cartProduct.currency !== selectedCurrency) {
@@ -48,7 +49,8 @@ function updateShippingmethod(){
     showCartPrices(prices);
 }
 
-//Casos de uso
+//Acá defino todas las funciones que se encargan de casos de uso
+
 //actualiza el precio cuando se cambia el valor del input cantidad
 function onUpdateQuantity(evt, prodctName) {
     const product = cartInfo.articles.find(product => product.name === prodctName);
@@ -68,7 +70,8 @@ function onRemove( prodctName) {
     showCart(cartInfo.articles);
 }
 
-//DOM management
+//Acá defino todas las funciones que se encargan del manejo del DOM
+
 //Obtiene el shipping method seleccionado por el usuario en el HTML
 function getShippinMethod() {
     let select = document.getElementById("shipping");
