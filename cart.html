@@ -52,9 +52,6 @@
       <div class="row">
           <div class="col-md-8 cart">
               <div class="title">
-                  <div class="row">
-                      <div class="col align-self-center text-right text-muted">2 items</div>
-                  </div>
               </div>
                 <div id="cart"> </div> </br>
               <div class="back-to-shop"><a href="./categories.html">&leftarrow; Back to shop </a><span class="text-muted"></span></div>
@@ -113,7 +110,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Método de Pago</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <button type="button" class="close" id="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -138,10 +135,10 @@
                             <div class="tab-content">
                                 <!-- credit card info-->
                                 <div id="credit-card" class="tab-pane fade show active pt-3">
-                                    <form role="form" onsubmit="event.preventDefault()">
+                                    <form role="form" onsubmit="showSuccess(event)">
                                         <div class="form-group"> <label for="username">
                                                 <h6>Nombre en la tarjeta</h6>
-                                            </label> <input type="text" name="username" placeholder="Card Owner Name" required class="form-control "> </div>
+                                            </label> <input type="text" name="username" placeholder="Card Owner Name" required class="form-control"> </div>
                                         <div class="form-group"> <label for="cardNumber">
                                                 <h6>Número de tarjeta</h6>
                                             </label>
@@ -163,15 +160,16 @@
                                                     </label> <input type="text" required class="form-control"> </div>
                                             </div>
                                         </div>
-                                        <div class="card-footer"> <button type="button" data-toggle="modal" data-target="#exampleModal2" class="subscribe btn btn-primary btn-block shadow-sm"> Confirmar Pago </button>
+                                        <div class="card-footer"> <button type="submit" data-toggle="modal" class="subscribe btn btn-primary btn-block shadow-sm"> Confirmar Pago </button>
                                     </form>
                                 </div>
                             </div> <!-- End -->
                             <!-- bank transfer info -->
                             <div id="net-banking" class="tab-pane fade pt-3">
+                              <form role="form" onsubmit="showSuccess(event)">
                                 <div class="form-group "> <label for="Select Your Bank">
                                         <h6>Selecciona tu banco</h6>
-                                    </label> <select class="form-control" id="ccmonth">
+                                    </label> <select class="form-control" id="ccmonth" required>
                                         <option value="" selected disabled>--Selecciona tu banco--</option>
                                         <option>Itaú</option>
                                         <option>Santander</option>
@@ -184,12 +182,13 @@
                                         <option>FUCEREP</option>
                                     </select> </div>
                                 <div class="form-group">
-                                    <p> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2"><i class="fas fa-mobile-alt mr-2"></i> Proceder al Pago </button> </p>
+                                    <p> <button type="submit" class="btn btn-primary" data-toggle="modal" ><i class="fas fa-mobile-alt mr-2"></i> Proceder al Pago </button> </p>
                                 </div>
+                              </form>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> 
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -197,27 +196,7 @@
       </div>
     </div>
   </div>
-
-    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Pago Finalizado</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body" id="pagoCompletado"></div>
-          </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              </div>
-            </div>
-          </div>
-        </div> 
  
-
-
     <div id="spinner-wrapper">
       <div class="lds-ring">
         <div></div>

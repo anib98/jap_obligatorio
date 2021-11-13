@@ -143,6 +143,13 @@ document.addEventListener("DOMContentLoaded", function (e) {
         if (resultObj.status === "ok") {
             paymentSuccess = resultObj.data;
         }
-    document.getElementById("pagoCompletado").innerHTML = paymentSuccess.msg;
+    paymentSuccessMsg = paymentSuccess.msg;
     });
+    
 });
+
+function showSuccess(event) {
+    event.preventDefault();
+    alert(paymentSuccessMsg);
+    $("#exampleModal").modal('hide'); 
+}
